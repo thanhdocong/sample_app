@@ -1,0 +1,27 @@
+<style>
+    .navbar-fixed-top + .content-container {
+        margin-top: 70px;
+    }
+    .content-container {
+        margin: 0 125px;
+    }
+    #top-link.affix {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+    }
+</style>
+<% if logged_in? %>
+	<%= render 'static_pages/login' %>
+<% else %>
+	<%= render 'static_pages/anonymous' %>
+	<div class="navbar navbar-fixed-top">...</div>
+<div class="content-container" id="top">
+    <p>Content that is longer than the viewport..</p>
+    <span id="top-link" data-spy="affix">
+        <a href="#top" class="well well-sm">Back to Top</a>
+    </span>
+</div>
+
+
+<% end %>
